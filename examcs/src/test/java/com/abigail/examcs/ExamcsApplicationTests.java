@@ -1,10 +1,10 @@
-package com.abigail.practicleexam;
+package com.abigail.examcs;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PracticleexamApplicationTests {
+class ExamcsApplicationTests {
 
 	@Test
 	void contextLoads() {
