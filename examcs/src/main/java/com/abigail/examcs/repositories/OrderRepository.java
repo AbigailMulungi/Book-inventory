@@ -5,5 +5,5 @@ import com.abigail.examcs.models.Orders;
 import java.util.Optional;
 import java.util.List;
 public interface OrderRepository extends JpaRepository<Orders, Long> {
-    Optional<List<Orders>> findByUserId(Long userId);
+    Optional<List<Orders>> findOrdersByCustomerId(Long customerId);
 }

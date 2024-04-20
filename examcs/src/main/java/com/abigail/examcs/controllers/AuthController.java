@@ -1,5 +1,8 @@
-package com.abigail.examcs.payloads;
+package com.abigail.examcs.controllers;
 
+import java.net.URI;
+import java.util.Collections;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import java.net.URI;
-import java.util.Collections;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import com.abigail.examcs.payloads.UserLogin;
+import com.abigail.examcs.payloads.UserSignUp;
+import com.abigail.examcs.payloads.JwtAuthenticationResponse;
 import jakarta.validation.Valid;
 import com.abigail.examcs.models.Roles;
 import com.abigail.examcs.models.RoleName;
@@ -83,8 +86,6 @@ public class AuthController {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtTokenProvider.generateToken(authentication);
-
         return ResponseEntity.ok(new JwtAuthenticationResponse(jwt));
     }
-    
 }
